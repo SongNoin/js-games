@@ -16,6 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
 }
 
 const Body = styled.div`
+  width: 100%;
   height: 100vh;
   background-color: ${colors.main05};
 `;
