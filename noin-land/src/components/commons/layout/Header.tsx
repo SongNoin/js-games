@@ -2,13 +2,14 @@ import { colors } from "commons/constants/colors";
 import styled from "styled-components";
 import { H0Text, H4Text, LogoText } from "components/commons/styles/text/text";
 import { StyledPadding } from "components/commons/styles/padding";
+import router from "next/router";
 
 export default function Header() {
   return (
     <Wrap>
       <LogoText>NoinLand</LogoText>
       <MenuWrap>
-        <H4Text>로또</H4Text>
+        <H4Text onClick={() => router.push("/lotto")}>로또</H4Text>
         <StyledPadding width={30} />
         <H4Text>룰렛</H4Text>
         <StyledPadding width={30} />
