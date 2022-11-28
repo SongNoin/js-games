@@ -12,7 +12,7 @@ export default function Header() {
         <StyledPadding width={30} />
         <H4Text>룰렛</H4Text>
         <StyledPadding width={30} />
-        <H4Text>텍스트</H4Text>
+        <H4Text>테스트</H4Text>
         <StyledPadding width={30} />
         <H4Text>텍스트</H4Text>
       </MenuWrap>
