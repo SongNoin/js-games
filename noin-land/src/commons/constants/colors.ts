@@ -4,6 +4,7 @@ export const colors = {
   main4: "#A87FF3",
   main6: "#784DC7",
   main10: "#0F0324",
+  red5: "#FF5964",
   black0: "#9F9F9F",
   black1: "#818181",
   balck2: "#646464",
