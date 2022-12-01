@@ -1,7 +1,7 @@
 import { colors } from "commons/constants/colors";
 import styled from "styled-components";
 
-export const LogoText = styled.span`
+const LogoText = styled.span`
   font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
@@ -10,7 +10,7 @@ export const LogoText = styled.span`
   color: ${colors.main10};
 `;
 
-export const H0Text = styled.span<{ color?: string }>`
+const H0 = styled.span<{ color?: string }>`
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 400;
@@ -20,7 +20,7 @@ export const H0Text = styled.span<{ color?: string }>`
   color: ${(props) => (props.color ? props.color : colors.black5)};
 `;
 
-export const H1Text = styled.span<{ color?: string }>`
+const H1 = styled.span<{ color?: string }>`
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 500;
@@ -29,7 +29,7 @@ export const H1Text = styled.span<{ color?: string }>`
   color: ${(props) => (props.color ? props.color : colors.black5)};
 `;
 
-export const H2Text = styled.span<{ color?: string }>`
+const H2 = styled.span<{ color?: string }>`
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 700;
@@ -39,7 +39,7 @@ export const H2Text = styled.span<{ color?: string }>`
   color: ${(props) => (props.color ? props.color : colors.black5)};
 `;
 
-export const H3Text = styled.span<{ color?: string }>`
+const H3 = styled.span<{ color?: string }>`
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 700;
@@ -49,7 +49,7 @@ export const H3Text = styled.span<{ color?: string }>`
   color: ${(props) => (props.color ? props.color : colors.black5)};
 `;
 
-export const H4Text = styled.span<{ color?: string }>`
+const H4 = styled.span<{ color?: string }>`
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 400;
@@ -59,7 +59,7 @@ export const H4Text = styled.span<{ color?: string }>`
   color: ${(props) => (props.color ? props.color : colors.black5)};
 `;
 
-export const P1Text = styled.span<{ color?: string }>`
+const P1 = styled.span<{ color?: string }>`
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 400;
@@ -69,7 +69,7 @@ export const P1Text = styled.span<{ color?: string }>`
   color: ${(props) => (props.color ? props.color : colors.black5)};
 `;
 
-export const P2Text = styled.span<{ color?: string }>`
+const P2 = styled.span<{ color?: string }>`
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 400;
@@ -79,7 +79,7 @@ export const P2Text = styled.span<{ color?: string }>`
   color: ${(props) => (props.color ? props.color : colors.black5)};
 `;
 
-export const P3Text = styled.span<{ color?: string }>`
+const P3 = styled.span<{ color?: string }>`
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 300;
@@ -89,7 +89,7 @@ export const P3Text = styled.span<{ color?: string }>`
   color: ${(props) => (props.color ? props.color : colors.black5)};
 `;
 
-export const P4Text = styled.span<{ color?: string }>`
+const P4 = styled.span<{ color?: string }>`
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 400;
@@ -98,3 +98,5 @@ export const P4Text = styled.span<{ color?: string }>`
   letter-spacing: -0.05em;
   color: ${(props) => (props.color ? props.color : colors.black5)};
 `;
+
+export const StyledText = { LogoText, H0, H1, H2, H3, H4, P1, P2, P3, P4 };

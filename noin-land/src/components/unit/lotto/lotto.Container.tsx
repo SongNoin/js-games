@@ -2,7 +2,7 @@ import axios from "axios";
 import { colors } from "commons/constants/colors";
 import { ILotto } from "commons/types/lotto";
 import RoundChip from "components/commons/Chip/roundchip";
-import { H2Text, H3Text, H4Text } from "components/commons/styles/text/text";
+import { StyledText } from "components/commons/styles/text/text";
 import { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 
@@ -23,10 +23,13 @@ export default function LottoContainer() {
   return (
     <Wrap>
       <LottoNumWrap>
-        <H4Text>
+        <StyledText.H4>
           {" "}
-          <H3Text color={colors.red5}>{lottoData?.drwNo}회</H3Text> 당첨결과
-        </H4Text>
+          <StyledText.H3 color={colors.red5}>
+            {lottoData?.drwNo}회
+          </StyledText.H3>{" "}
+          당첨결과
+        </StyledText.H4>
         <ChipWrap>
           <RoundChip text={lottoData?.drwtNo1} />
           <RoundChip text={lottoData?.drwtNo2} />

@@ -1,6 +1,5 @@
 import { colors } from "commons/constants/colors";
 import styled from "styled-components";
-import { H2Text } from "../styles/text/text";
 
 interface Props {
   textColor?: string;
