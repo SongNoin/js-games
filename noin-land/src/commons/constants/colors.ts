@@ -1,3 +1,4 @@
+// colors
 export const colors = {
   main0: "#FFFFFF",
   main05: "#F4EFFD",
