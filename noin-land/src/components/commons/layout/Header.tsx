@@ -7,17 +7,27 @@ import { StyledText } from "components/commons/styles/text/text";
 export default function Header() {
   return (
     <Wrap>
-      <StyledText.LogoText>NoinLand</StyledText.LogoText>
+      <HeaderButton onClick={() => router.push("/")}>
+        <StyledText.LogoText>NoinLand</StyledText.LogoText>
+      </HeaderButton>
       <MenuWrap>
-        <StyledText.H4 onClick={() => router.push("/lotto")}>
-          로또
-        </StyledText.H4>
+        <HeaderButton>
+          <StyledText.H4 onClick={() => router.push("/lotto")}>
+            로또
+          </StyledText.H4>
+        </HeaderButton>
         <StyledPadding width={30} />
-        <StyledText.H4>룰렛</StyledText.H4>
+        <HeaderButton>
+          <StyledText.H4>룰렛</StyledText.H4>
+        </HeaderButton>
         <StyledPadding width={30} />
-        <StyledText.H4>테스트</StyledText.H4>
+        <HeaderButton>
+          <StyledText.H4>테스트</StyledText.H4>
+        </HeaderButton>
         <StyledPadding width={30} />
-        <StyledText.H4>텍스트</StyledText.H4>
+        <HeaderButton>
+          <StyledText.H4>텍스트</StyledText.H4>
+        </HeaderButton>
       </MenuWrap>
     </Wrap>
   );
@@ -39,4 +49,7 @@ const MenuWrap = styled.div`
   transform: translate(-50%);
   display: flex;
   flex-direction: row;
+`;
+const HeaderButton = styled.div`
+  cursor: pointer;
 `;
