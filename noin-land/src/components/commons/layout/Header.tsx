@@ -52,3 +52,6 @@ const MenuWrap = styled.div`
   flex: 3 1;
   justify-content: space-evenly;
 `;
+const HeaderButton = styled.div`
+  cursor: pointer;
+`;
