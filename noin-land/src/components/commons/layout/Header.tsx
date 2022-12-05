@@ -7,27 +7,26 @@ import { StyledText } from "components/commons/styles/text/text";
 export default function Header() {
   return (
     <Wrap>
-      <HeaderButton onClick={() => router.push("/")}>
-        <StyledText.LogoText>NoinLand</StyledText.LogoText>
-      </HeaderButton>
+      <LogoWrap>
+        <StyledText.LogoText style={{ cursor: "pointer" }}>
+          NoinLand
+        </StyledText.LogoText>
+      </LogoWrap>
       <MenuWrap>
-        <HeaderButton>
-          <StyledText.H4 onClick={() => router.push("/lotto")}>
-            로또
-          </StyledText.H4>
-        </HeaderButton>
-        <StyledPadding width={30} />
-        <HeaderButton>
-          <StyledText.H4>룰렛</StyledText.H4>
-        </HeaderButton>
-        <StyledPadding width={30} />
-        <HeaderButton>
-          <StyledText.H4>테스트</StyledText.H4>
-        </HeaderButton>
-        <StyledPadding width={30} />
-        <HeaderButton>
-          <StyledText.H4>텍스트</StyledText.H4>
-        </HeaderButton>
+        <StyledText.H4
+          style={{ cursor: "pointer" }}
+          onClick={() => router.push("/lotto")}
+        >
+          로또
+        </StyledText.H4>
+        <StyledText.H4 style={{ cursor: "pointer" }}>룰렛</StyledText.H4>
+        <StyledText.H4
+          style={{ cursor: "pointer" }}
+          onClick={() => router.push("/colorPicker")}
+        >
+          색깔 맞추기
+        </StyledText.H4>
+        <StyledText.H4 style={{ cursor: "pointer" }}>텍스트</StyledText.H4>
       </MenuWrap>
     </Wrap>
   );
@@ -40,15 +39,18 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 10px 100px 0px 100px;
+  padding-right: 5%;
 `;
-
+const LogoWrap = styled.div`
+  display: flex;
+  flex: 1 1;
+  justify-content: center;
+`;
 const MenuWrap = styled.div`
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
   display: flex;
   flex-direction: row;
+  flex: 3 1;
+  justify-content: space-evenly;
 `;
 const HeaderButton = styled.div`
   cursor: pointer;
