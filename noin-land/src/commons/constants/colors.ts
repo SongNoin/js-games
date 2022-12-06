@@ -2,6 +2,7 @@
 export const colors = {
   main0: "#FFFFFF",
   main05: "#F4EFFD",
+  main15: "#DECFFA",
   main4: "#A87FF3",
   main6: "#784DC7",
   main10: "#0F0324",
