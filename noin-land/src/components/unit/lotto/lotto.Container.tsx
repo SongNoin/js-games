@@ -1,7 +1,8 @@
 import axios from "axios";
 import { colors } from "commons/constants/colors";
 import { ILotto } from "commons/types/lotto";
-import RoundChip from "components/commons/Chip/roundchip";
+import RoundChip from "components/commons/chips/RoundChip";
+import { StyledPadding } from "components/commons/styles/padding";
 import { StyledText } from "components/commons/styles/text/text";
 import { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
@@ -10,7 +11,7 @@ export default function LottoContainer() {
   const [lottoData, setLottoData] = useState<ILotto>();
   const drwNo = 1041;
   useEffect(() => {
-    getLottoData();
+    // getLottoData();
   }, []);
 
   const getLottoData = useCallback(() => {
@@ -41,16 +42,22 @@ export default function LottoContainer() {
           <RoundChip text={lottoData?.bnusNo} />
         </ChipWrap>
       </LottoNumWrap>
+      <StyledPadding height={30} />
+      <LottoNumWrap>
+        <StyledText.H4>로또번호 생성기</StyledText.H4>
+      </LottoNumWrap>
     </Wrap>
   );
 }
 
 const Wrap = styled.div`
   display: flex;
-  justify-content: center;
-  padding-top: 200px;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
 `;
 const LottoNumWrap = styled.div`
+  width: 800px;
   border: 1px solid #ddd;
   background: #fff;
   padding: 60px 60px 90px;
