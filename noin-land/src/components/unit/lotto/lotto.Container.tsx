@@ -9,18 +9,16 @@ import styled from "styled-components";
 
 export default function LottoContainer() {
   const [lottoData, setLottoData] = useState<ILotto>();
-  const drwNo = 1041;
+  // const drwNo = 1048;
   useEffect(() => {
-    // getLottoData();
+    getLottoData();
   }, []);
 
-  const getLottoData = useCallback(() => {
-    axios
-      .get(
-        `https://cors-anywhere.herokuapp.com/https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=${drwNo}`
-      )
-      .then((res) => setLottoData(res.data));
-  }, [drwNo]);
+  const getLottoData = async () => {
+    const response = await fetch(`/api/lotto`);
+    const lotto = await response.json();
+    setLottoData(lotto);
+  };
   return (
     <Wrap>
       <LottoNumWrap>
