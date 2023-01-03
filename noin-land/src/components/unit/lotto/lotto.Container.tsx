@@ -4,24 +4,37 @@ import { ILotto } from "commons/types/lotto";
 import RoundChip from "components/commons/chips/RoundChip";
 import { StyledPadding } from "components/commons/styles/padding";
 import { StyledText } from "components/commons/styles/text/text";
-import { useCallback, useEffect, useState } from "react";
+import { ChangeEvent } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 export default function LottoContainer() {
   const [lottoData, setLottoData] = useState<ILotto>();
-  // const drwNo = 1048;
+  const [drwNo, setDrwNo] = useState(1048);
   useEffect(() => {
     getLottoData();
-  }, []);
+  }, [drwNo]);
 
   const getLottoData = async () => {
-    const response = await fetch(`/api/lotto`);
+    const response = await fetch(`/api/lotto/${drwNo}`);
     const lotto = await response.json();
     setLottoData(lotto);
   };
+  function onChangeSelectDrwNo(e: ChangeEvent<HTMLSelectElement>) {
+    setDrwNo(Number(e.target.value));
+  }
   return (
     <Wrap>
       <LottoNumWrap>
+        <SelectBoxWrap>
+          <SelectBox onChange={onChangeSelectDrwNo}>
+            <option>1048</option>
+            <option>1047</option>
+            <option>1046</option>
+            <option>1045</option>
+            <option>1044</option>
+          </SelectBox>
+        </SelectBoxWrap>
         <StyledText.H4>
           {" "}
           <StyledText.H3 color={colors.red5}>
@@ -29,6 +42,7 @@ export default function LottoContainer() {
           </StyledText.H3>{" "}
           당첨결과
         </StyledText.H4>
+        <StyledPadding height={60} />
         <ChipWrap>
           <RoundChip text={lottoData?.drwtNo1} />
           <RoundChip text={lottoData?.drwtNo2} />
@@ -54,6 +68,8 @@ const Wrap = styled.div`
   align-items: center;
   padding-top: 100px;
 `;
+const SelectBox = styled.select``;
+const SelectBoxWrap = styled.div``;
 const LottoNumWrap = styled.div`
   width: 800px;
   border: 1px solid #ddd;
@@ -61,6 +77,8 @@ const LottoNumWrap = styled.div`
   padding: 60px 60px 90px;
 `;
 const ChipWrap = styled.div`
+  padding: 0px 60px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 `;

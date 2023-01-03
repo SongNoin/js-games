@@ -5,7 +5,10 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<ILotto | undefined>
 ) {
-  const lotto = lottoRequestInfo.find((el) => el.drwNo === 1048);
+  const { drwNo } = req.query;
+  const lotto = lottoRequestInfo.find(
+    (el) => String(el.drwNo) == String(drwNo)
+  );
   res.status(200).json(lotto);
 }
 
